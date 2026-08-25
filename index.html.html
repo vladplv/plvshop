@@ -1,0 +1,87 @@
+
+<!-- ЛОГОТИП САЙТА -->
+<header class="site-header">
+  <a href="/" class="logo-link" aria-label="На главную">
+    <img src="logo.png" alt="Логотип" class="site-logo">
+  </a>
+</header>
+
+<style>
+  .site-header{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:28px 20px 18px;
+    box-sizing:border-box;
+  }
+
+  .logo-link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+
+  .site-logo{
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:180px;
+    max-height:110px;
+    object-fit:contain;
+  }
+
+  .logo-link:hover{
+    transform:scale(1.04);
+    opacity:.9;
+  }
+
+  @media (max-width:600px){
+    .site-header{
+      padding:20px 16px 12px;
+    }
+
+    .site-logo{
+      max-width:140px;
+      max-height:85px;
+    }
+  }
+</style>
+
+<div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()"><aside class="panel"><button class="close" onclick="closeCart()">×</button><h2>Корзина</h2><div id="cartItems" class="empty">Корзина пуста.</div><div class="checkout" id="checkout" style="display:none"><div class="total"><span>Итого</span><span id="total">0 €</span></div><input id="name" placeholder="Ваше имя"><input id="phone" placeholder="Телефон"><input id="address" placeholder="Адрес доставки"><button class="buy" onclick="order()">Оформить заказ</button></div></aside></div>
+
+<script>
+
+const products=[
+
+{id:'shu',name:'Шу Пуэр',cn:'熟普洱',desc:'Глубокий, мягкий и тёплый профиль.',opts:[['Порционный · 6 г',3],['Рассыпной · 100 г',18],['Смола · 10 шт.',10],['Смола · 2 шт.',18],['Блин · 100 г',18]]},
+
+{id:'sheng',name:'Шэн Пуэр',cn:'生普洱',desc:'Свежий характер и чистая чайная энергия.',opts:[['Порционный · 6 г',3],['Рассыпной · 100 г',18],['Блин · 100 г',18]]},
+
+{id:'tegu',name:'Тегуаньинь',cn:'铁观音',desc:'Ароматный улун с цветочным характером.',opts:[['Порционный · 6 г',3],['Рассыпной · 100 г',18]]},
+
+{id:'dahong',name:'Да Хун Пао',cn:'大红袍',desc:'Насыщенный улун с глубоким послевкусием.',opts:[['Порционный · 6 г',3],['Рассыпной · 100 г',18],['Плитка · 100 г',18]]}
+
+];
+
+const cart=[];
+
+function render(){document.getElementById('products').innerHTML=products.map(p=><article class="product" id="${p.id}"><div class="photo">ФОТО ТОВАРА</div><div class="info"><div class="type">${p.cn}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div><select class="select" id="sel-${p.id}" onchange="price('${p.id}')">${p.opts.map((o,i)=><option value="${i}">${o[0]} — ${o[1]} €</option>).join('')}</select><div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><span class="price" id="price-${p.id}">${p.opts[0][1]} €</span><button class="buy" onclick="add('${p.id}')">В корзину</button></div></div></article>).join('')}
+
+function price(id){let p=products.find(x=>x.id===id),o=p.opts[document.getElementById('sel-'+id).value];document.getElementById('price-'+id).textContent=o[1]+' €'}
+
+function add(id){let p=products.find(x=>x.id===id),i=+document.getElementById('sel-'+id).value,o=p.opts[i];cart.push({name:p.name,opt:o[0],price:o[1]});update();openCart()}
+
+function update(){document.getElementById('count').textContent=cart.length;let box=document.getElementById('cartItems');if(!cart.length){box.className='empty';box.innerHTML='Корзина пуста.';document.getElementById('checkout').style.display='none';return}box.className='';box.innerHTML=cart.map((x,i)=><div class="cart-item"><span>${x.name}<br><small>${x.opt}</small></span><b>${x.price} €</b></div>).join('');document.getElementById('checkout').style.display='block';document.getElementById('total').textContent=cart.reduce((s,x)=>s+x.price,0)+' €'}
+
+function openCart(){document.getElementById('drawer').classList.add('open')}function closeCart(){document.getElementById('drawer').classList.remove('open')}
+
+function order(){let n=document.getElementById('name').value,p=document.getElementById('phone').value,a=document.getElementById('address').value;if(!n||!p||!a){alert('Заполни имя, телефон и адрес.');return}alert('Спасибо, '+n+'! Заказ принят в демо-режиме. Подключение реальной отправки заказа добавим следующим этапом.')}
+
+render();
+
+</script>
+
+</body></html>
