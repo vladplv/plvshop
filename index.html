@@ -3,162 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>茶 · Китайский чай</title>
+<title>PLV — Китайский чай</title>
+<meta name="description" content="PLV — современный магазин китайского чая. Шу Пуэр, Шэн Пуэр, Тегуаньинь и Да Хун Пао.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
-.brand-wrap{display:flex;align-items:center;gap:18px}.partnership{display:flex;align-items:center;gap:8px;padding-left:16px;border-left:1px solid rgba(255,255,255,.13);opacity:.8}.plp-logo{width:28px;height:28px;object-fit:contain}.plp-logo-link{display:flex;align-items:center;text-decoration:none}.partnership-copy{font-size:9px;line-height:1.35;letter-spacing:.7px;color:#77736c;text-transform:uppercase}.partnership-copy b{display:block;color:#aaa59d;font-weight:500}.partnership-copy span{display:block;font-family:'Noto Serif SC',serif;color:#5e5a54;text-transform:none;letter-spacing:1px;margin-top:1px}.partnership-note{max-width:850px;margin:-25px auto 70px;padding:0 20px;text-align:center;color:#6e6a63;font-size:11px;line-height:1.6}.partnership-note img{width:24px;height:24px;object-fit:contain;vertical-align:middle;margin:0 6px;opacity:.65}.partnership-note strong{color:#aaa59d;font-weight:500}.partnership-note .cn{font-family:'Noto Serif SC',serif;color:#55514b;margin-top:3px}@media(max-width:950px){.partnership-copy{display:block}.partnership{border-left:0;padding-left:5px}.plp-logo{width:27px;height:27px}.partnership-copy{font-size:8px;letter-spacing:.45px}}
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+:root{--bg:#080808;--panel:#11110f;--panel2:#151513;--text:#f3f0e8;--muted:#9b968d;--gold:#c9a45a;--gold2:#e0bd72;--line:rgba(201,164,90,.24)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:#090909;color:#f2f0eb;font-family:Manrope,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.025;background-image:radial-gradient(#fff .6px,transparent .6px);background-size:5px 5px;z-index:999}
-header{position:fixed;top:0;left:0;width:100%;height:82px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:linear-gradient(to bottom,rgba(7,7,7,.97),rgba(7,7,7,.72),transparent);backdrop-filter:blur(8px)}
-.logo{width:54px;height:54px;object-fit:contain}
-nav{display:flex;gap:34px;align-items:center}
-nav a{color:#d8d5ce;text-decoration:none;font-size:13px;transition:.25s}
-nav a:hover{color:#fff}
-.cart-button{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.04);color:white;padding:11px 17px;border-radius:3px;cursor:pointer;display:flex;gap:10px;align-items:center;font-size:13px}
-.cart-count{min-width:21px;height:21px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#eee;color:#111;font-size:11px;font-weight:700}
-.hero{min-height:720px;position:relative;display:flex;align-items:center;overflow:hidden;padding:130px 8vw 80px;background:radial-gradient(ellipse at 70% 35%,rgba(90,90,90,.22),transparent 45%),linear-gradient(120deg,#0a0a0a 15%,#151515 55%,#090909 100%)}
-.hero:before{content:"山";position:absolute;right:6%;top:5%;font-family:'Noto Serif SC',serif;font-size:390px;color:rgba(255,255,255,.025);line-height:1}
-.hero:after{content:"茶";position:absolute;right:18%;bottom:-80px;font-family:'Noto Serif SC',serif;font-size:420px;color:rgba(255,255,255,.018)}
-.hero-content{width:50%;max-width:600px;position:relative;z-index:3}
-.eyebrow{color:#aaa59c;font-family:'Noto Serif SC',serif;letter-spacing:4px;font-size:14px;margin-bottom:22px}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(62px,8vw,105px);font-weight:500;line-height:.85;letter-spacing:-3px}
-.hero-chinese{font-family:'Noto Serif SC',serif;font-size:38px;margin-top:17px;letter-spacing:9px}
-.line{width:50px;height:1px;background:#aaa49a;margin:27px 0}
-.hero-description{max-width:470px;color:#c1beb7;line-height:1.9;font-size:14px}
-.hero-description .cn{margin-top:12px;font-family:'Noto Serif SC',serif;color:#8f8b84}
-.hero-buttons{margin-top:30px;display:flex;gap:12px}
-.button{border:1px solid #69645d;color:#f5f3ef;text-decoration:none;padding:14px 24px;font-size:13px;background:rgba(255,255,255,.025);transition:.25s;cursor:pointer}
-.button:hover{background:#eee;color:#111}
-.hero-art{position:absolute;width:540px;height:400px;right:7%;top:190px}
-.tea-tray{position:absolute;width:470px;height:70px;bottom:40px;left:20px;background:linear-gradient(135deg,#282522,#0d0d0d);transform:perspective(400px) rotateX(48deg);box-shadow:0 35px 45px rgba(0,0,0,.7)}
-.teapot{position:absolute;width:180px;height:145px;left:100px;bottom:100px;border-radius:48% 48% 40% 40%;background:radial-gradient(circle at 35% 25%,#4a4741,#111 65%);box-shadow:25px 25px 50px rgba(0,0,0,.6)}
-.teapot:before{content:"";position:absolute;width:45px;height:45px;border:16px solid #24211f;border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;right:-45px;top:42px;transform:rotate(45deg)}
-.teapot:after{content:"";position:absolute;width:65px;height:38px;border:13px solid #25221f;border-right-color:transparent;border-bottom-color:transparent;border-radius:50%;left:-50px;top:47px;transform:rotate(-20deg)}
-.lid{position:absolute;width:45px;height:45px;border-radius:50%;background:#24211f;top:-28px;left:67px}
-.lid:after{content:"";position:absolute;width:16px;height:16px;border-radius:50%;background:#555049;left:15px;top:-9px}
-.tea-cup{position:absolute;width:95px;height:65px;right:90px;bottom:85px;border-radius:0 0 45px 45px;background:linear-gradient(#3d3935,#111)}
-.tea-cup:after{content:"";position:absolute;width:85px;height:23px;border-radius:50%;background:#362c22;top:-8px;left:5px;box-shadow:inset 0 0 0 7px #201d1a}
-.section{max-width:1300px;margin:auto;padding:100px 5vw}
-.section-title{text-align:center;margin-bottom:50px}
-.section-title h2{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:500}
-.section-title .cn{display:block;font-family:'Noto Serif SC',serif;color:#88837b;font-size:20px;margin-top:5px}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.product{border:1px solid rgba(255,255,255,.12);background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));padding:25px 20px 22px;transition:.3s;position:relative;overflow:hidden}
-.product:hover{border-color:rgba(255,255,255,.32);transform:translateY(-4px)}
-.product-art{height:190px;display:flex;justify-content:center;align-items:center;position:relative}
-.tea-leaves{width:145px;height:85px;border-radius:50%;background:radial-gradient(ellipse at 30% 30%,#6a5940,transparent 20%),radial-gradient(ellipse at 70% 50%,#3e3529,transparent 25%),radial-gradient(ellipse,#171411,#070707);transform:rotate(-4deg);filter:drop-shadow(0 18px 15px rgba(0,0,0,.7))}
-.product:nth-child(2) .tea-leaves{background:radial-gradient(ellipse at 30% 30%,#aaa179,transparent 20%),radial-gradient(ellipse at 70% 50%,#726b4d,transparent 25%),radial-gradient(ellipse,#403d2c,#111)}
-.product:nth-child(3) .tea-leaves{border-radius:40%;width:125px;background:radial-gradient(circle,#77704d 3px,transparent 4px);background-size:15px 15px}
-.product:nth-child(4) .tea-leaves{background:radial-gradient(ellipse at 30% 30%,#6b5137,transparent 20%),radial-gradient(ellipse at 70% 50%,#3a2c20,transparent 25%),radial-gradient(ellipse,#17110d,#060606)}
-.product h3{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;text-align:center}
-.product .cn{font-family:'Noto Serif SC',serif;text-align:center;color:#77726b;margin:5px 0 15px}
-.product-desc{text-align:center;color:#aaa69e;font-size:12px;line-height:1.7;min-height:52px}
-.product select{width:100%;margin-top:18px;padding:11px;color:#ddd;background:#111;border:1px solid #3a3834;outline:none}
-.product-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:15px}
-.product-price{font-family:'Cormorant Garamond',serif;font-size:24px}
-.add{padding:10px 13px;background:transparent;border:1px solid #777168;color:white;cursor:pointer;transition:.2s}
-.add:hover{background:white;color:#111}
-.culture{max-width:1200px;margin:0 auto 80px;padding:45px;display:grid;grid-template-columns:1fr 1.4fr;gap:45px;align-items:center;background:linear-gradient(90deg,#dedbd3,#c7c4bc);color:#161616;position:relative;overflow:hidden}
-.mountains{height:250px;position:relative;overflow:hidden;background:linear-gradient(160deg,transparent 25%,rgba(30,30,30,.12) 26%,transparent 48%),linear-gradient(25deg,transparent 40%,rgba(30,30,30,.1) 41%,transparent 70%)}
-.mountains:before{content:"山水";position:absolute;font-family:'Noto Serif SC',serif;font-size:130px;color:rgba(30,30,30,.12);left:20px;top:35px}
-.culture h2{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600}
-.culture h2 span{font-family:'Noto Serif SC',serif;font-size:20px;margin-left:12px}
-.culture p{margin-top:18px;line-height:1.8;font-size:13px}
-.culture .cn-text{font-family:'Noto Serif SC',serif;color:#555}
-.features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0 5vw 80px;max-width:1300px;margin:auto}
-.feature{text-align:center;color:#aaa}
-.feature-icon{font-family:'Noto Serif SC',serif;font-size:28px;color:#ddd;margin-bottom:10px}
-.feature strong{display:block;color:#ddd;font-size:13px;font-weight:500}
-.feature span{display:block;font-family:'Noto Serif SC',serif;color:#666;font-size:11px;margin-top:5px}
-footer{border-top:1px solid #1f1f1f;text-align:center;padding:40px 20px;color:#666;font-size:12px}
-footer .cn{font-family:'Noto Serif SC',serif;margin-top:8px}
-.drawer{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:500;opacity:0;pointer-events:none;transition:.3s}
-.drawer.open{opacity:1;pointer-events:auto}
-.panel{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:#0b0b0b;border-left:1px solid #292929;padding:30px;transform:translateX(100%);transition:.35s;overflow-y:auto}
-.drawer.open .panel{transform:translateX(0)}
-.close{position:absolute;top:25px;right:25px;background:none;border:none;color:#aaa;font-size:30px;cursor:pointer}
-.panel h2{font-family:'Cormorant Garamond',serif;font-size:38px;margin-bottom:30px}
-.empty{text-align:center;color:#666;padding:80px 20px}
-.cart-item{display:flex;justify-content:space-between;gap:15px;padding:18px 0;border-bottom:1px solid #222}
-.cart-item small{color:#777;display:block;margin-top:5px}
-.remove{border:none;background:none;color:#777;cursor:pointer;font-size:12px;margin-top:8px}
-.remove:hover{color:#fff}
-.checkout{margin-top:30px}
-.total{display:flex;justify-content:space-between;font-size:20px;margin-bottom:20px}
-.checkout input,.checkout textarea{width:100%;background:#111;border:1px solid #292929;color:white;padding:14px;margin-bottom:10px;outline:none;font-family:inherit}
-.checkout textarea{height:100px;resize:vertical}
-.order-button{width:100%;padding:16px;background:#e7e5df;color:#111;border:none;cursor:pointer;font-weight:600;margin-top:5px}
-.order-button:hover{background:white}
-@media(max-width:950px){
-nav{display:flex;gap:18px}
-nav a{font-size:11px}
-header{padding:0 20px}
-.hero{min-height:800px;padding:130px 25px 60px}
-.hero-content{width:100%}
-.hero-art{opacity:.22;right:-100px;top:370px}
-.products{grid-template-columns:repeat(2,1fr)}
-.culture{grid-template-columns:1fr;margin:0 20px 60px;padding:30px}
-.features{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:600px){
-nav{display:none}
-.hero h1{font-size:65px}
-.hero-chinese{font-size:28px}
-.products{grid-template-columns:1fr}
-.features{grid-template-columns:1fr 1fr}
-.section{padding:70px 20px}
-.hero-art{transform:scale(.75);transform-origin:center}
-}
+body{background:var(--bg);color:var(--text);font-family:Manrope,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:radial-gradient(#fff .55px,transparent .55px);background-size:6px 6px;z-index:9999}
+a{color:inherit}
+.header{position:fixed;top:0;left:0;width:100%;height:86px;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5.5vw;border-bottom:1px solid rgba(255,255,255,.05);background:rgba(7,7,7,.86);backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;min-width:280px}
+.logo{width:52px;height:52px;object-fit:contain}
+.brand-copy{padding-left:15px;border-left:1px solid rgba(255,255,255,.15);font-size:10px;line-height:1.45;letter-spacing:1px;color:#77736c;text-transform:uppercase}
+.brand-copy b{display:block;color:#b4aea2;font-weight:500}.brand-copy span{font-family:'Noto Serif SC',serif;color:#5f5b55;letter-spacing:1px;text-transform:none}
+.nav{display:flex;align-items:center;gap:46px}.nav a{text-decoration:none;color:#c9c5bd;font-size:14px;position:relative;padding:33px 0;transition:.25s}.nav a:after{content:"";position:absolute;left:0;right:0;bottom:20px;height:1px;background:var(--gold);transform:scaleX(0);transition:.25s}.nav a:hover,.nav a.active{color:#fff}.nav a:hover:after,.nav a.active:after{transform:scaleX(1)}
+.cart-btn{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.025);color:#fff;padding:12px 17px;display:flex;align-items:center;gap:11px;cursor:pointer;font:inherit;font-size:13px;transition:.25s}.cart-btn:hover{border-color:var(--gold)}
+.cart-count{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#090909;font-size:11px;font-weight:700}
+.hero{min-height:760px;position:relative;display:flex;align-items:center;overflow:hidden;padding:150px 8vw 90px;background:radial-gradient(ellipse at 73% 48%,rgba(121,93,49,.16),transparent 34%),linear-gradient(110deg,#070707 15%,#11110f 60%,#080808)}
+.hero:before{content:"茶";position:absolute;right:7%;top:50px;font-family:'Noto Serif SC',serif;font-size:420px;line-height:1;color:rgba(255,255,255,.018)}
+.hero-content{width:49%;max-width:620px;position:relative;z-index:5}.eyebrow{font-family:'Noto Serif SC',serif;color:var(--gold);letter-spacing:5px;font-size:13px;margin-bottom:25px}.hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(70px,8vw,112px);line-height:.78;letter-spacing:-4px}.hero-cn{font-family:'Noto Serif SC',serif;color:var(--gold2);font-size:39px;letter-spacing:8px;margin-top:24px}.gold-line{width:54px;height:1px;background:var(--gold);margin:28px 0}.hero p{color:#b9b4aa;max-width:510px;font-size:14px;line-height:1.9}.hero p.cn{font-family:'Noto Serif SC',serif;color:#777168;margin-top:12px}.hero-action{display:inline-block;margin-top:32px;text-decoration:none;border:1px solid var(--gold);color:var(--gold2);padding:14px 27px;font-size:13px;transition:.25s}.hero-action:hover{background:var(--gold);color:#090909}
+.hero-art{position:absolute;right:5%;top:150px;width:610px;height:470px;z-index:2}.tray{position:absolute;width:520px;height:78px;left:30px;bottom:50px;background:linear-gradient(135deg,#312b23,#0b0b0a);transform:perspective(500px) rotateX(52deg);box-shadow:0 35px 55px rgba(0,0,0,.8)}.pot{position:absolute;width:215px;height:175px;left:125px;bottom:125px;border-radius:48% 48% 42% 42%;background:radial-gradient(circle at 34% 25%,#554638,#1b1510 67%,#0a0908);box-shadow:30px 35px 55px rgba(0,0,0,.75)}.pot:before{content:"";position:absolute;width:57px;height:57px;border:17px solid #211a14;border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;right:-50px;top:54px;transform:rotate(45deg)}.pot:after{content:"";position:absolute;width:78px;height:43px;border:15px solid #211a14;border-right-color:transparent;border-bottom-color:transparent;border-radius:50%;left:-58px;top:57px;transform:rotate(-20deg)}.lid{position:absolute;width:66px;height:38px;border-radius:50%;background:#201913;top:-28px;left:75px}.lid:after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:#564536;left:24px;top:-12px}.cup{position:absolute;width:115px;height:78px;right:83px;bottom:105px;border-radius:0 0 55px 55px;background:linear-gradient(#403229,#0d0c0b);box-shadow:18px 20px 30px rgba(0,0,0,.55)}.cup:after{content:"";position:absolute;width:105px;height:25px;left:5px;top:-9px;border-radius:50%;background:#7b4d24;box-shadow:inset 0 0 0 8px #211711}.cake{position:absolute;width:210px;height:70px;right:145px;bottom:30px;border-radius:50%;background:radial-gradient(ellipse at 30% 25%,#6f4c2d,#25170e 55%,#0b0907);transform:rotate(-6deg);box-shadow:0 22px 35px rgba(0,0,0,.8)}.steam{position:absolute;width:130px;height:150px;left:180px;top:0;border-left:1px solid rgba(255,255,255,.08);border-radius:50%;transform:rotate(12deg);filter:blur(3px)}
+.section{max-width:1320px;margin:auto;padding:105px 5vw}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:45px}.kicker{color:var(--gold);font-size:11px;letter-spacing:4px}.section h2{font-family:'Cormorant Garamond',serif;font-size:55px;font-weight:500;margin-top:7px}.section h2 span{font-family:'Noto Serif SC',serif;font-size:20px;color:#777168;margin-left:12px}.section-link{color:var(--gold2);text-decoration:none;font-size:13px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:linear-gradient(145deg,#151513,#0e0e0c);border:1px solid rgba(255,255,255,.09);min-height:430px;padding:20px;position:relative;transition:.3s}.product:hover{transform:translateY(-6px);border-color:var(--line);box-shadow:0 20px 45px rgba(0,0,0,.35)}.product-art{height:220px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 50%,rgba(201,164,90,.09),transparent 60%)}.tea-object{width:145px;height:145px;border-radius:50%;background:radial-gradient(circle at 33% 28%,#725536,#342316 45%,#100c08 78%);box-shadow:0 22px 35px rgba(0,0,0,.7);position:relative}.tea-object:after{content:"";position:absolute;inset:13px;border-radius:50%;border:1px dashed rgba(213,177,106,.3)}.sheng{background:radial-gradient(circle at 32% 25%,#9a9b62,#4d4f2e 45%,#15170c 80%)}.tie{width:132px;height:155px;border-radius:42%;background:radial-gradient(circle,#68703c 3px,transparent 4px);background-size:17px 17px;filter:drop-shadow(0 22px 18px rgba(0,0,0,.65))}.dahong{background:radial-gradient(circle at 30% 25%,#795134,#3b2516 50%,#120b07 80%)}.product-type{color:var(--gold);font-size:10px;letter-spacing:3px;text-transform:uppercase}.product h3{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:600;margin-top:6px}.product-cn{font-family:'Noto Serif SC',serif;color:#6e685e;margin-top:2px}.product-desc{color:#8f8a81;font-size:12px;line-height:1.6;margin:14px 0 18px;min-height:38px}.option{width:100%;padding:11px;background:#0b0b0a;border:1px solid #35312b;color:#d8d2c7;outline:none}.product-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.price{font-family:'Cormorant Garamond',serif;font-size:27px}.add{border:1px solid #62513a;background:transparent;color:var(--gold2);padding:10px 14px;cursor:pointer;font-size:12px;transition:.2s}.add:hover{background:var(--gold);color:#090909}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.info-card{border:1px solid rgba(255,255,255,.08);background:#10100e;padding:38px}.info-card h3{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500}.info-card h3 span{font-family:'Noto Serif SC',serif;font-size:17px;color:#777168;margin-left:10px}.info-card p{color:#99938a;font-size:13px;line-height:1.9;margin-top:16px}.delivery-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:25px}.delivery-item{padding:22px;background:#151513;border:1px solid rgba(255,255,255,.06)}.delivery-item b{display:block;color:#ddd7ca;font-size:13px}.delivery-item span{display:block;color:#777168;font-size:11px;margin-top:7px}
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.contact-title{font-family:'Cormorant Garamond',serif;font-size:62px;font-weight:500}.contact-text{color:#928c82;line-height:1.9;font-size:13px;margin-top:15px}.contact-list{display:grid;gap:14px}.contact-list a{display:block;text-decoration:none;color:#ddd6ca;border-bottom:1px solid #25231f;padding:15px 0}.contact-list small{display:block;color:#6f6a62;font-size:10px;letter-spacing:2px;margin-bottom:5px}
+footer{border-top:1px solid #1d1c19;padding:45px 5vw;color:#5e5a53;font-size:11px;display:flex;justify-content:space-between}.footer-cn{font-family:'Noto Serif SC',serif}
+.drawer{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:2000;opacity:0;pointer-events:none;transition:.3s}.drawer.open{opacity:1;pointer-events:auto}.panel{position:absolute;right:0;top:0;width:min(440px,100%);height:100%;background:#0d0d0b;border-left:1px solid #29251f;padding:35px;transform:translateX(100%);transition:.35s;overflow:auto}.drawer.open .panel{transform:translateX(0)}.close{position:absolute;right:25px;top:20px;background:none;border:0;color:#aaa;font-size:30px;cursor:pointer}.panel h2{font-family:'Cormorant Garamond',serif;font-size:45px;font-weight:500;margin-bottom:35px}.empty{color:#666;text-align:center;padding:80px 20px}.cart-item{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid #25231f;padding:18px 0}.cart-item small{display:block;color:#777;margin-top:5px}.remove{background:none;border:0;color:#777;cursor:pointer;margin-top:8px}.total{display:flex;justify-content:space-between;font-size:20px;margin:25px 0}.checkout input,.checkout textarea{width:100%;background:#121210;border:1px solid #292722;color:#fff;padding:13px;margin-bottom:10px;font:inherit;outline:none}.checkout textarea{height:90px;resize:vertical}.order{width:100%;border:0;background:var(--gold);color:#0b0b0a;padding:15px;cursor:pointer;font-weight:700}.order:hover{background:var(--gold2)}
+@media(max-width:1000px){.nav{gap:20px}.nav a{font-size:12px}.brand{min-width:230px}.products{grid-template-columns:repeat(2,1fr)}.hero-art{right:-130px;opacity:.45}.hero-content{width:62%}.info-grid,.contacts{grid-template-columns:1fr}.delivery-list{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.header{height:72px;padding:0 18px}.brand{min-width:auto}.brand-copy{display:none}.logo{width:46px;height:46px}.nav{display:none}.cart-btn{padding:9px 11px}.hero{min-height:760px;padding:130px 24px 60px}.hero-content{width:100%}.hero h1{font-size:68px}.hero-cn{font-size:27px}.hero-art{right:-260px;top:300px;opacity:.28;transform:scale(.8)}.section{padding:75px 20px}.section-head{align-items:start}.section h2{font-size:43px}.section h2 span{display:block;margin:4px 0 0}.products{grid-template-columns:1fr}.product{min-height:0}.delivery-list{grid-template-columns:1fr}.info-card{padding:28px}footer{display:block;text-align:center}.footer-cn{margin-top:8px}}
 </style>
 </head>
 <body>
-<header>
-    <div class="brand-wrap">
-        <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><img src="logo.png" class="logo" alt="Логотип"></a>
-        <div class="partnership">
-            <a href="https://plp-shop.vercel.app" class="plp-logo-link" aria-label="Перейти на сайт PLP"><img src="plp-logo.png" class="plp-logo" alt="PLP"></a>
-            <div class="partnership-copy"><b>PLV — официальный партнёр PLP</b><span>PLP 直营合作伙伴</span></div>
-        </div>
-    </div>
-    <nav>
-        <a href="#products">Каталог</a>
-        <a href="#delivery">Доставка</a>
-        <a href="#about">О магазине</a>
-        <a href="#contacts">Контакты</a>
-    </nav>
-    <button class="cart-button" onclick="openCart()">Корзина <span class="cart-count" id="count">0</span></button>
+<header class="header">
+  <a class="brand" href="#top" aria-label="PLV">
+    <img src="logo.png" class="logo" alt="PLV">
+    <div class="brand-copy"><b>PLV — официальный партнёр PLP</b><span>PLP 直营合作伙伴</span></div>
+  </a>
+  <nav class="nav">
+    <a class="active" href="#catalog">Каталог</a>
+    <a href="#delivery">Доставка</a>
+    <a href="#about">О магазине</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <button class="cart-btn" onclick="openCart()">Корзина <span class="cart-count" id="cartCount">0</span></button>
 </header>
+
+<main id="top">
 <section class="hero">
-    <div class="hero-content">
-        <div class="eyebrow">茶 · CHÁ · КИТАЙСКИЙ ЧАЙ</div>
-        <h1>ШУ ПУЭР</h1><div class="hero-chinese">熟普洱</div><div class="line"></div>
-        <div class="hero-description">Глубокий, мягкий и тёплый профиль. Выдержанный чай с землистым характером и долгим благородным послевкусием.<div class="cn">深沉、温和、醇厚的口感。<br>陈年熟普洱，具有大地的气息和悠长的回甘。</div></div>
-        <div class="hero-buttons"><a href="#products" class="button">Смотреть чай →</a></div>
-    </div>
-    <div class="hero-art"><div class="tea-tray"></div><div class="teapot"><div class="lid"></div></div><div class="tea-cup"></div></div>
+  <div class="hero-content">
+    <div class="eyebrow">茶 · CHÁ · КИТАЙСКИЙ ЧАЙ</div>
+    <h1>ШУ ПУЭР</h1>
+    <div class="hero-cn">熟普洱</div>
+    <div class="gold-line"></div>
+    <p>Глубокий, мягкий и тёплый профиль. Выдержанный чай с землистым характером и долгим благородным послевкусием.</p>
+    <p class="cn">深沉、温和、醇厚的口感。<br>陈年熟普洱，具有大地的气息和悠长的回甘。</p>
+    <a class="hero-action" href="#catalog">Смотреть чай →</a>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="steam"></div><div class="tray"></div><div class="pot"><div class="lid"></div></div><div class="cup"></div><div class="cake"></div>
+  </div>
 </section>
-<section class="section" id="products"><div class="section-title"><h2>Наш чай</h2><span class="cn">精选好茶</span></div><div class="products" id="productsGrid"></div></section>
-<section class="culture" id="about"><div class="mountains"></div><div><h2>Чайная культура <span>茶文化</span></h2><p>Мы выбираем чай с лучших плантаций Китая и создаём честный продукт без лишнего. Настоящий вкус, проверенный временем.</p><p class="cn-text">我们精选来自中国优质茶园的好茶，专注于呈现最真实的味道。不添加多余，只为一杯好茶。</p></div></section>
-<section class="section" id="delivery" style="padding-top:20px;padding-bottom:70px"><div class="section-title"><h2>Доставка</h2><span class="cn">配送</span></div><div style="max-width:700px;margin:auto;text-align:center;color:#aaa69e;line-height:1.9;font-size:13px">Здесь разместим точные условия доставки и оплаты перед запуском магазина.</div></section>
-<div class="partnership-note" id="contacts"><img src="plp-logo.png" alt="PLP"><span>Чайный магазин работает в <strong>прямом партнёрстве с PLP</strong> — отдельный проект в экосистеме PLP.</span><div class="cn">本店与 PLP 直接合作 · PLP 旗下独立茶叶项目</div><div style="margin-top:12px">Контакты: добавим здесь телефон, Telegram, e-mail или другие способы связи.</div></div>
-<div class="features"><div class="feature"><div class="feature-icon">叶</div><strong>Натуральный чай</strong><span>天然好茶</span></div><div class="feature"><div class="feature-icon">山</div><strong>Отборное сырьё</strong><span>优质原料</span></div><div class="feature"><div class="feature-icon">茶</div><strong>Традиции Китая</strong><span>中国传统</span></div><div class="feature"><div class="feature-icon">运</div><strong>Быстрая доставка</strong><span>快速配送</span></div></div>
-<footer><div>© 2026 · Китайский чай</div><div class="cn">一茶一世界 · Один чай — целый мир</div></footer>
-<div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()"><aside class="panel"><button class="close" onclick="closeCart()">×</button><h2>Корзина</h2><div id="cartItems" class="empty">Корзина пуста.</div><div class="checkout" id="checkout" style="display:none"><div class="total"><span>Итого</span><span id="total">0 €</span></div><input id="name" type="text" placeholder="Ваше имя"><input id="phone" type="tel" placeholder="Телефон"><textarea id="address" placeholder="Адрес доставки"></textarea><button class="order-button" onclick="order()">Оформить заказ</button></div></aside></div>
+
+<section class="section" id="catalog">
+  <div class="section-head"><div><div class="kicker">PLV · TEA COLLECTION</div><h2>Каталог чая <span>茶品</span></h2></div><a class="section-link" href="#catalog">Смотреть всё →</a></div>
+  <div class="products">
+    <article class="product" data-name="Шу Пуэр">
+      <div class="product-art"><div class="tea-object"></div></div><div class="product-type">PU-ERH · 熟普洱</div><h3>Шу Пуэр</h3><div class="product-cn">熟普洱</div><p class="product-desc">Мягкий, глубокий и выдержанный профиль.</p>
+      <select class="option" onchange="changePrice(this)"><option value="3">Порционный · 6 г — 3 €</option><option value="18">Рассыпной · 100 г — 18 €</option><option value="18">Блин · 100 г — 18 €</option><option value="10">Смола · 10 шт. — 10 €</option><option value="18">Смола · 2 упаковки — 18 €</option></select>
+      <div class="product-bottom"><span class="price">3 €</span><button class="add" onclick="addProduct(this)">В корзину</button></div>
+    </article>
+    <article class="product" data-name="Шэн Пуэр">
+      <div class="product-art"><div class="tea-object sheng"></div></div><div class="product-type">PU-ERH · 生普洱</div><h3>Шэн Пуэр</h3><div class="product-cn">生普洱</div><p class="product-desc">Свежий, выразительный чай с живым характером.</p>
+      <select class="option" onchange="changePrice(this)"><option value="3">Порционный · 6 г — 3 €</option><option value="18">Рассыпной · 100 г — 18 €</option><option value="18">Блин · 100 г — 18 €</option></select>
+      <div class="product-bottom"><span class="price">3 €</span><button class="add" onclick="addProduct(this)">В корзину</button></div>
+    </article>
+    <article class="product" data-name="Тегуаньинь">
+      <div class="product-art"><div class="tea-object tie"></div></div><div class="product-type">OOLONG · 铁观音</div><h3>Тегуаньинь</h3><div class="product-cn">铁观音</div><p class="product-desc">Ароматный китайский улун с ярким характером.</p>
+      <select class="option" onchange="changePrice(this)"><option value="3">Порционный · 6 г — 3 €</option><option value="18">Рассыпной · 100 г — 18 €</option></select>
+      <div class="product-bottom"><span class="price">3 €</span><button class="add" onclick="addProduct(this)">В корзину</button></div>
+    </article>
+    <article class="product" data-name="Да Хун Пао">
+      <div class="product-art"><div class="tea-object dahong"></div></div><div class="product-type">OOLONG · 大红袍</div><h3>Да Хун Пао</h3><div class="product-cn">大红袍</div><p class="product-desc">Насыщенный улун с глубоким древесным послевкусием.</p>
+      <select class="option" onchange="changePrice(this)"><option value="3">Порционный · 6 г — 3 €</option><option value="18">Рассыпной · 100 г — 18 €</option><option value="18">Плитка · 100 г — 18 €</option></select>
+      <div class="product-bottom"><span class="price">3 €</span><button class="add" onclick="addProduct(this)">В корзину</button></div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="delivery">
+  <div class="section-head"><div><div class="kicker">SERVICE</div><h2>Доставка <span>配送</span></h2></div></div>
+  <div class="info-grid"><div class="info-card"><h3>Бережно до двери <span>安心配送</span></h3><p>Мы упаковываем чай так, чтобы он приехал к вам в идеальном состоянии. Условия и стоимость доставки можно уточнить перед оформлением заказа.</p></div><div class="info-card"><h3>Заказ через корзину <span>购物车</span></h3><p>Выберите чай и формат, добавьте его в корзину и оставьте контактные данные. После этого мы свяжемся с вами для подтверждения заказа и доставки.</p></div></div>
+  <div class="delivery-list"><div class="delivery-item"><b>Заказы</b><span>Принимаем онлайн 24/7</span></div><div class="delivery-item"><b>Упаковка</b><span>Аккуратно и надёжно</span></div><div class="delivery-item"><b>Оплата</b><span>Согласовывается при подтверждении</span></div></div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-head"><div><div class="kicker">ABOUT PLV</div><h2>О магазине <span>关于我们</span></h2></div></div>
+  <div class="info-grid"><div class="info-card"><h3>Китайский чай без лишнего</h3><p>PLV — современный магазин китайского чая. В каталоге собраны классические позиции: Шу Пуэр, Шэн Пуэр, Тегуаньинь и Да Хун Пао. Мы делаем акцент на понятном выборе, аккуратной подаче и самом чае.</p></div><div class="info-card"><h3>茶 · Традиция</h3><p>Пуэр и улуны — часть большой китайской чайной культуры. Поэтому на сайте мы сохранили китайские названия и минималистичную эстетику, но сделали покупку простой и современной.</p></div></div>
+</section>
+
+<section class="section" id="contacts">
+  <div class="contacts"><div><div class="kicker">GET IN TOUCH</div><div class="contact-title">Контакты</div><p class="contact-text">Есть вопрос по чаю, формату или заказу? Напишите нам — детали заказа можно обсудить напрямую.</p></div><div class="contact-list"><a href="mailto:hello@plv-shop.org"><small>EMAIL</small>hello@plv-shop.org</a><a href="#" onclick="openCart();return false"><small>ORDER</small>Оформить заказ через корзину</a></div></div>
+</section>
+</main>
+
+<footer><div>© 2026 PLV · Китайский чай</div><div class="footer-cn">茶 · 中国茶 · 中国茶文化</div></footer>
+
+<div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()"><aside class="panel"><button class="close" onclick="closeCart()">×</button><h2>Корзина</h2><div id="cartItems"></div><div id="cartCheckout"></div></aside></div>
+
 <script>
-const products=[{id:'shu',name:'Шу Пуэр',cn:'熟普洱',desc:'Глубокий, мягкий и тёплый профиль.',cnDesc:'深沉、温和、醇厚。',opts:[['Порционный · 6 г',3],['Рассыпной · 100 г',18],['Смола · 10 шт.',10],['Смола · 2 шт.',18],['Блин · 100 г',18]]},{id:'sheng',name:'Шэн Пуэр',cn:'生普洱',desc:'Свежий характер и чистая чайная энергия.',cnDesc:'清新自然，茶气十足。',opts:[['Порционный · 6 г',3],['Рассыпной · 100 г',18],['Блин · 100 г',18]]},{id:'tegu',name:'Тегуаньинь',cn:'铁观音',desc:'Ароматный улун с цветочным характером.',cnDesc:'兰花香浓郁，回甘持久。',opts:[['Порционный · 6 г',3],['Рассыпной · 100 г',18]]},{id:'dahong',name:'Да Хун Пао',cn:'大红袍',desc:'Насыщенный улун с глубоким послевкусием.',cnDesc:'岩韵明显，滋味醇厚。',opts:[['Порционный · 6 г',3],['Рассыпной · 100 г',18],['Плитка · 100 г',18]]}];
 let cart=[];
-function renderProducts(){document.getElementById('productsGrid').innerHTML=products.map(p=>`<article class="product"><div class="product-art"><div class="tea-leaves"></div></div><h3>${p.name}</h3><div class="cn">${p.cn}</div><div class="product-desc">${p.desc}<br><span style="color:#68645e;font-family:'Noto Serif SC',serif">${p.cnDesc}</span></div><select id="sel-${p.id}" onchange="changePrice('${p.id}')">${p.opts.map((o,i)=>`<option value="${i}">${o[0]} — ${o[1]} €</option>`).join('')}</select><div class="product-bottom"><span class="product-price" id="price-${p.id}">${p.opts[0][1]} €</span><button class="add" onclick="addToCart('${p.id}')">В корзину</button></div></article>`).join('')}
-function changePrice(id){const p=products.find(x=>x.id===id);const i=Number(document.getElementById('sel-'+id).value);document.getElementById('price-'+id).textContent=p.opts[i][1]+' €'}
-function addToCart(id){const p=products.find(x=>x.id===id);const i=Number(document.getElementById('sel-'+id).value);const o=p.opts[i];cart.push({id:Date.now()+Math.random(),name:p.name,cn:p.cn,option:o[0],price:o[1]});updateCart();openCart()}
-function removeFromCart(id){cart=cart.filter(x=>x.id!==id);updateCart()}
-function updateCart(){const box=document.getElementById('cartItems'),checkout=document.getElementById('checkout');document.getElementById('count').textContent=cart.length;if(!cart.length){box.className='empty';box.innerHTML='Корзина пуста.';checkout.style.display='none';document.getElementById('total').textContent='0 €';return}box.className='';box.innerHTML=cart.map(item=>`<div class="cart-item"><div><strong>${item.name}</strong><small>${item.cn}</small><small>${item.option}</small><button class="remove" onclick="removeFromCart(${item.id})">Удалить</button></div><b>${item.price} €</b></div>`).join('');checkout.style.display='block';const total=cart.reduce((sum,item)=>sum+Number(item.price),0);document.getElementById('total').textContent=total+' €'}
-function openCart(){document.getElementById('drawer').classList.add('open');document.body.style.overflow='hidden'}
-function closeCart(){document.getElementById('drawer').classList.remove('open');document.body.style.overflow=''}
-function order(){const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),address=document.getElementById('address').value.trim();if(!name||!phone||!address){alert('Пожалуйста, заполни имя, телефон и адрес доставки.');return}const total=cart.reduce((sum,item)=>sum+Number(item.price),0);alert('Спасибо, '+name+'! Ваш заказ на '+total+' € принят в демо-режиме.')}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart()});renderProducts();updateCart();
+function changePrice(select){select.closest('.product').querySelector('.price').textContent=select.value+' €'}
+function addProduct(button){const card=button.closest('.product');const select=card.querySelector('.option');const option=select.options[select.selectedIndex];cart.push({name:card.dataset.name,option:option.textContent,price:Number(select.value)});renderCart();openCart()}
+function removeProduct(i){cart.splice(i,1);renderCart()}
+function renderCart(){document.getElementById('cartCount').textContent=cart.length;const items=document.getElementById('cartItems');const checkout=document.getElementById('cartCheckout');if(!cart.length){items.innerHTML='<div class="empty">В корзине пока пусто.<br><br>Выберите чай из каталога.</div>';checkout.innerHTML='';return}items.innerHTML=cart.map((x,i)=>`<div class="cart-item"><div><b>${x.name}</b><small>${x.option}</small><small>${x.price} €</small></div><button class="remove" onclick="removeProduct(${i})">Удалить</button></div>`).join('');const total=cart.reduce((s,x)=>s+x.price,0);checkout.innerHTML=`<div class="total"><span>Итого</span><b>${total} €</b></div><div class="checkout"><input id="customerName" placeholder="Ваше имя"><input id="customerContact" placeholder="Telegram / телефон / email"><textarea id="customerComment" placeholder="Комментарий к заказу"></textarea><button class="order" onclick="sendOrder()">ОТПРАВИТЬ ЗАПРОС НА ЗАКАЗ</button></div>`}
+function openCart(){document.getElementById('drawer').classList.add('open');renderCart()}
+function closeCart(){document.getElementById('drawer').classList.remove('open')}
+function sendOrder(){const name=document.getElementById('customerName').value.trim();const contact=document.getElementById('customerContact').value.trim();const comment=document.getElementById('customerComment').value.trim();if(!name||!contact){alert('Укажите имя и контакт для связи.');return}const text=encodeURIComponent('Здравствуйте! Хочу заказать:\n\n'+cart.map(x=>`• ${x.name} — ${x.option} — ${x.price} €`).join('\n')+'\n\nИтого: '+cart.reduce((s,x)=>s+x.price,0)+' €\nИмя: '+name+'\nКонтакт: '+contact+'\nКомментарий: '+comment);window.location.href='mailto:hello@plv-shop.org?subject=Заказ PLV&body='+text}
+renderCart();
 </script>
 </body>
 </html>
